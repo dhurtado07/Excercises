@@ -1,0 +1,20 @@
+// GET https://reqres.in/api/users?page=2
+
+pm.test("Status code is 200", function()
+{
+    pm.response.to.have.status(200);
+});
+
+var jsonData = pm.response.json();
+
+pm.test("Very if JSON is valid", function () {
+    pm.response.to.be.json;
+});
+pm.test("Verify the page 2", function () {
+    
+    pm.expect(jsonData.page).to.eql(2);
+});
+
+pm.test("Body matches string", function () {
+    pm.expect(pm.response.text()).to.include("michael.lawson@reqres.in");
+});
